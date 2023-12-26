@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Check(){
+            if(ff.email.value.length == 0){
+                alert("이메일을 입력하세요");
+            }else if(ff.email.value == "incheon1bo@naver.com"){
+                alert("이메일을 발송했습니다. \n incheon1bo@naver.com에서 계정정보를 확인해주세요.");
+            }else{
+                alert("가입되지 않은 계정입니다.\n 회원 가입을 시도하거나 이메일 주소를 다시 확인해주세요.")
+            }
+        }
+    </script>
+    <style>
+        
+        input{width: 400px; height: 30px;}
+        #click{background-color: orange; color: white; width: 400px; 
+            height: 30px; padding-top: 2px; text-decoration: none;
+        border: 1px solid white;
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    display: block;
+   
+        } 
+            
+        footer{
+            clear: both;
+            display: block;
+            background-color:  antiquewhite;
+            text-align: center;
+            padding: 15px;
+            height: 20%;
+        }
+        
+        .ss{
+        display: inline-block;
+        white-space: nowrap;
+        animation : mm 15s linear infinite;
+        color: black;
+        
+        }
+
+        .cc{
+            background-color: antiquewhite;
+            height: 60%;
+            padding-top: 5px;
+            padding-bottom: 5px;            
+        }
+
+        @keyframes mm {
+            0% {
+            transform: translateX(100%);
+            }
+            100% {
+            transform: translateX(-100%);
+            }
+        }
+        footer{
+            margin-top: 25%;
+        }      
+    </style>
+</head>
+<body>
+<center>
+    <header class="cc">
+        <span class="ss">
+           <b>개냥이 용품점 애옹쓰~ 신규 오픈기념 카테고리 별로 최대 10% ~ 50% 할인 이벤트 중입니다!!! 이벤트는 8월 31일 까지 진행됩니다! (일부 품목은 할인목록에서 제외 될 수 있으며, 할인 품목 재고 소진시 할인이벤트가 조기 종료될 수 있습니다.) 개냥이용품점 애옹쓰 많이 애용해주세요~</b>
+        </span>  
+    </header>
+    <section>
+    <form name="ff">
+    <a href = "second.html"><img src="logo.png" style="width: 200PX;"></a>
+    <h5>---------------------------------------------이메일로 찾기---------------------------------------------</h5>
+    <h5> 가입시 사용한 이메일 주소를 입력하면 가입정보를 보내드립니다 </h5>
+    <input name = "email" type="text" placeholder="이메일을 입력하세요"><br><br>
+    <input id = "click" type = "button" value = "이메일로 받기" onclick="Check(this.form);">
+    </form> <p>
+    </section>
+    <footer> 
+       사업자명 : 애용쓰 <br> 판매업 신고 번호 : 제 2023-인천송도-03277<br>주소 : 인천광역시 송도동 글로벌캠퍼스 푸르지오 아파트 111동 805호 <br> 고객지원: 문의 게시판 또는 실시간 채팅 <br> 이용약관 | 개인정보처리방침 | 리셀러 소개 <br> Made by 장재영 김은형 박예은 백종욱
+    </footer>
+</center>
+</body>
+</html>

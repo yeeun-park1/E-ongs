@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>가입 정보 입력 화면</title>
+        <style>
+            body{
+                font-family:Arial, Helvetica, sans-serif;
+                background-color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0%;   
+            }
+            form{
+                background-color: white;
+                border-radius: 10px;
+                padding: 20px;
+                width:400px;
+                box-shadow: 0px 0px 10px black; 
+            }
+            .image-container {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            .image-container img {
+            width: 80px;
+            }
+        legend{
+            margin-bottom: 20px;
+
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        input[type="button"] {
+            background-color: orange;
+            color: white;
+            border:1px white;
+            border-radius: 5px;
+            padding: 10px 10px;
+            margin-top: 10px;
+        }
+        .button {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+    display: block;
+    width: 70px;
+    margin: 10px;
+}
+        </style>
+    <script>
+        function Check() {
+    var phoneNumber = f.p.value;
+    
+    var phoneNumberLength = phoneNumber.replace(/\s/g, '').length;
+    
+    if (phoneNumberLength === 11) {
+        alert("인증번호가 발송되었습니다.");
+    } else {
+        alert("전화번호 11자리를 입력하세요.");
+    }
+}
+        function Go(form) {
+        var enteredCode = form.d6.value;
+
+        if (enteredCode.length === 0) {
+            alert("인증코드를 입력해주세요.");
+        } else if (enteredCode === "0000") { 
+            alert("인증되었습니다.");
+        } else {
+            alert("인증번호가 맞지 않습니다.");
+        }
+    }
+    function SignUp() {
+            if(f.email.value == ""){
+		alert("이메일이 입력되지 않았습니다. 다시 입력해 주세요");
+		f.email.focus();
+		}else if(f.pass.value == ""){
+		alert("비밀번호이 입력되지 않았습니다. 다시 입력해 주세요");
+		f.pass.focus();
+		}else if(f.pass1.value == ""){
+		alert("비밀번호 확인이 입력되지 않았습니다. 다시 입력해 주세요");
+		f.phone.focus();
+		}else if(f.name.value == ""){
+		alert("닉네임이 입력되지 않았습니다. 다시 입력해 주세요");
+		f.name.focus();
+		}else if(f.p.value == ""){
+		alert("전화번호가 입력되지 않았습니다. 다시 입력해 주세요");
+		f.p.focus();
+		}else if(f.i.value == ""){
+		alert("인증코드가 입력되지 않았습니다. 다시 입력해 주세요");
+		f.i.focus();
+		}else{
+            if(document.getElementsByClassName("checkbox")[0].checked ||
+                document.getElementsByClassName("checkbox")[1].checked &&
+                document.getElementsByClassName("checkbox")[2].checked &&
+                document.getElementsByClassName("checkbox")[3].checked){
+                    alert("회원가입이 완료되었습니다.");
+                    location.href=("second.html");
+            }else{
+                    alert("필수 동의 항목을 체크해주세요.");
+            }   
+        }
+        }
+        function All(){
+        const checkAllCheckbox = document.getElementById('checkAll');
+        const checkboxes = document.querySelectorAll('.checkbox');
+
+            checkAllCheckbox.addEventListener('change', function () {
+                 checkboxes.forEach(checkbox => {
+                 checkbox.checked = checkAllCheckbox.checked;
+                });
+            });
+
+            checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                if (!this.checked) {
+                checkAllCheckbox.checked = false;
+                }
+                });
+            });
+        }
+
+
+    </script>
+    </head>
+<body>
+    <form name = "f">
+           
+            <div class="image-container">
+                <a href = "second.html"><img src="logo.png" alt="Logo" style="width: 200PX;"></a>
+                </div>
+                
+        <fieldset>
+            <legend>가입 정보 입력하기</legend>
+            이메일 <input name = "email" type="text" size="20" maxlength="25" autofocus id="d1"placeholder="이메일을 입력해주세요."> <br>
+            비밀번호 <input name = "pass" type="password" size="30" maxlength="15" id="d2"placeholder="비밀번호(영문+숫자+특수문자 8자 이상")><br>
+            비밀번호 확인 <input name = "pass1"type="password" size="15" maxlength="15" id="d3"placeholder="비밀번호 확인"><br>
+            닉네임 <input name = "name" type="text" size="15" maxlength="10" autofocus id="d4"placeholder="닉네임을 입력해주세요."> <br>
+            전화번호 <input type="text" name="p" size="25" maxlength="11" autofocus id="d5"placeholder=" - 를 제외한 번호만 입력해주세요."> <br>
+            <input type="button" class="button" value="인증요청" onclick="Check(this.form);">
+           <br><br> 인증코드 <input name ="i" type="text" size="25" maxlength="4" autofocus id="d6"placeholder="인증코드를 입력해주세요."> <br>
+           <input type="button" value="확인" class="button"  onclick="Go(this.form);">
+           <br>추천인 코드 <input type="text" size="7" maxlength="11" autofocus id="d7"placeholder="선택사항"> <br>
+    
+                <input type="checkbox" class="checkbox"id="checkAll" onclick="All();"> 모두 동의합니다
+            <br>
+                <input type="checkbox" class="checkbox" > 만 14세 이상입니다.
+            <br>
+                <input type="checkbox" class="checkbox" > 이용 약관 동의
+            <br>
+                <input type="checkbox" class="checkbox"> 개인정보 수집 및 이용 동의
+            <br>
+            <input type="button" id="signUpButton" class="button"  value="회원 가입하기" style="width: 100px;" onclick="SignUp();">
+
+            
+           
+        </fieldset>
+    </form>
+</body>
+</html>
+

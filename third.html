@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Check(){
+            if(ff.email.value == "incheon1bo@naver.com" && ff.password.value == "1234567"){
+                alert("로그인 되었습니다.")
+                window.location.href ="eleven.html"
+                }else{
+                    alert("아이디 혹은 비밀번호가 틀렸습니다.\n 다시 입력하세요.");
+                }
+            }
+
+    </script>
+    <style>
+        
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:medium;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        .line {
+            text-align: center;
+        }
+        div{ height: 35px; width: 280px;
+            padding: 0 auto;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+            border:1px;
+            padding-top: 5px;
+        }
+        .enter{height: 35px; width: 350px;}
+        .logo{width:50px;}
+        #kakao{background-color: yellow;
+        }
+        #login{background-color: orange; color: white; padding: 0 auto; padding-top: 5px;}
+        #email{
+            background-color: orange;
+            color: white;
+            text-decoration: none;
+        }
+        footer{
+            clear: both;
+            display: block;
+            background-color:  antiquewhite;
+            text-align: center;
+            padding: 15px;
+        }
+        
+        .ss{
+        display: inline-block;
+        white-space: nowrap;
+        animation : mm 15s linear infinite;
+        color: black;
+        
+        }
+
+        .cc{
+            background-color: antiquewhite;
+            height: 30px;
+            padding-top: 5px;
+        }
+
+        @keyframes mm {
+            0% {
+            transform: translateX(100%);
+            }
+            100% {
+            transform: translateX(-100%);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+<form name = "ff">
+<center>
+    <header class="cc">
+        <span class="ss">
+           <b>개냥이 용품점 애옹쓰~ 신규 오픈기념 카테고리 별로 최대 10% ~ 50% 할인 이벤트 중입니다!!! 이벤트는 8월 31일 까지 진행됩니다! (일부 품목은 할인목록에서 제외 될 수 있으며, 할인 품목 재고 소진시 할인이벤트가 조기 종료될 수 있습니다.) 개냥이용품점 애옹쓰 많이 애용해주세요~</b>
+        </span>  
+    </header>
+    <a href = "second.html"><img src="logo.png" style="width: 200PX;"></a>
+    <h3 class = "line">로그인이 필요한 서비스입니다</h3>
+    <h5 class = "line">------------------------------------간편 로그인/회원가입------------------------------------</h5>
+    <a href ="https://accounts.kakao.com/login/?continue=https%3A%2F%2Fkauth.kakao.com%2Foauth%2Fauthorize%3Fproxy%3DeasyXDM_Kakao_c7l030av0kf_provider%26ka%3Dsdk%252F1.43.1%2520os%252Fjavascript%2520sdk_type%252Fjavascript%2520lang%252Fko-KR%2520device%252FWin32%2520origin%252Fhttps%25253A%25252F%25252Fwww.idus.com%26origin%3Dhttps%253A%252F%252Fwww.idus.com%26response_type%3Dcode%26redirect_uri%3Dkakaojs%26state%3Dfjvzywzrg45kfkxgfltgt%26through_account%3Dtrue%26client_id%3Db8f8a6447c4b332f56469b63c9b7a010&talk_login=hidden#login"><div id = "kakao"> <img src = "kk.jpg" style = "width : 25px;"> 3초만에 시작하기 </div></a><br>
+    <a href ="eighth.html"><div id = "email"> 이메일로 가입하기</div></a><br><br>
+    <a href ="https://nid.naver.com/nidlogin.login?mode=form&url=https://www.naver.com/"><img src = "naver.jpg" class = "logo" class="check"></a> &nbsp;<a href ="https://ko-kr.facebook.com/"><img src = "facebook.jpg" class = "logo"></a> &nbsp;<a href ="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoia28ifQ%3D%3D%22%7D"><img src="twitter.jpg" class = "logo"></a> &nbsp;<a href ="https://accounts.google.com/InteractiveLogin/identifier?continue=https%3A%2F%2Fwww.google.com%2F%3F%26bih%3D936%26biw%3D941%26hl%3Dko&ec=GAZAmgQ&hl=ko&passive=true&ifkv=AXo7B7VOVSWb_CQYLt072PIdOygFM9H1lZ_4e2U5I9eEjYqZdLk64FoNeQwQ88lYTgCZ90a4z0FY&flowName=GlifWebSignIn&flowEntry=ServiceLogin" ><img src="google.jpg" class = "logo"></a>
+    <h5 class = "line">---------------------------------------이메일 로그인---------------------------------------</h5>
+    <label><input name="email" class="enter" type ="text"  placeholder="이메일" autofocus></label><br><br>
+    <label><input name="password" class ="enter" type="password" placeholder="비밀번호"></label><br>
+    <label><input type = "checkbox" class="check">이메일 저장하기</label><br>
+    <a href ="fourth.html" class="check">아이디/비밀번호 찾기</a><br><br>
+    <input id = "click" type = "button" value = "로그인" onclick="Check(this.form);"><p>
+    <footer> 
+        사업자명 : 애용쓰 <br> 판매업 신고 번호 : 제 2023-인천송도-03277<br>주소 : 인천광역시 송도동 글로벌캠퍼스 푸르지오 아파트 111동 805호 <br> 고객지원: 문의 게시판 또는 실시간 채팅 <br> 이용약관 | 개인정보처리방침 | 리셀러 소개 <br> Made by 장재영 김은형 박예은 백종욱
+    </footer>
+</center>
+</form>
+</body>
+</html>

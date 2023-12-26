@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html length="ko">
+<head>
+	<meta charterset="UTF-8">
+  <style>
+	table{
+		border: 2px solid orange;
+		border-radius: 15px;
+	}
+
+	input[type="text"]{
+			width: 200px;
+           height: 20px; 
+            border-radius: 5px;
+            margin-top: 5px;
+	}
+
+	.t1{
+		height: 40px;
+		width: 100px;
+		text-align: center;
+	}
+
+	#b1{
+		background-color: orange;
+		color: white;
+		border-radius: 5px;
+		box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+		border: 1px solid white;
+	}
+
+	#b2{
+		background-color: orange;
+		color: white;
+		border-radius: 5px;
+		box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+		border: 1px solid white;
+	}
+
+	#b3{
+		background-color: orange;
+		color: white;
+		border-radius: 5px;
+		box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+		border: 1px solid white;
+	}
+
+	#b4{
+		background-color: orange;
+		color: white;
+		border-radius: 5px;
+		box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+		border: 1px solid white;
+	}
+
+
+    div.button1{
+		
+   margin-left: 315px;
+   margin-top:5px;
+   width: 20%;
+    }
+
+    div.button1 input{
+   padding: 5px;
+   width: 40%;
+   font-size: 9px;
+    }
+    
+    div.button2{
+   margin: auto;
+   margin-top:5px;
+   margin-left: 10px;
+    }
+
+    div.button2 input{
+   padding: 5px;
+   
+   font-size: 16px;
+    }
+
+    caption{
+        font-size: 25px;
+    }
+	.ss{
+        display: inline-block;
+        white-space: nowrap;
+        animation : mm 15s linear infinite;
+        color: black;
+        }
+
+        .cc{
+            background-color: antiquewhite;
+            height: 30px;
+            padding-top: 5px;
+        }
+
+        @keyframes mm {
+            0% {
+            transform: translateX(100%);
+            }
+            100% {
+            transform: translateX(-100%);
+            }
+        }
+        footer{
+            clear: both;
+            display: block;
+            background-color:  antiquewhite;
+            text-align: center;
+            padding: 15px;
+			margin-top: 15%;
+        }
+  </style>
+  <script>
+    function correction(ff){
+	var sum = "";
+	if(ff.name.value == ""){
+		alert("닉네임을 입력하지 않았습니다. 다시 입력해 주세요");
+		ff.name.focus();
+		}else if(ff.email.value == ""){
+		alert("이메일을 입력하지 않았습니다. 다시 입력해 주세요");
+		ff.email.focus();
+		}else if(ff.phone.value == ""){
+		alert("전화번호가 입력되지 않았습니다. 다시 입력해 주세요");
+		ff.phone.focus();
+		}else if(ff.sung[0].checked == false&&ff.sung[1].checked == false){
+		alert("성별을 체크하지 않았습니다. 다시 체크해 주세요");
+		ff.sung.focus();
+		}else if(ff.birthday.value == ""){
+		alert("생일을 입력하지 않았습니다. 다시 입력해 주세요");
+		ff.birthday.focus();
+		}else{
+			sum += "닉네임 : " + ff.name.value + "\n";
+	        sum += "이메일 : " + ff.email.value + "\n";
+	        sum += "전화번호 : " + ff.phone.value + "\n";
+			sum += "성별 : " + ff.sung.value + "\n";
+			sum += "생일 : " + ff.birthday.value + "\n";
+
+			alert("수고하셨습니다\n" + sum + "회원정보 수정이 완료되었습니다.");
+			location.href=("second.html");
+	        }
+			
+		}
+	
+      function secession() {
+          if (confirm("회원 탈퇴를 하시겠습니까?")) {
+              alert("회원 탈퇴가 완료되었습니다.");
+			  location.href=("second.html");
+          } else {
+              alert("회원 탈퇴가 취소되었습니다.");
+          }
+      }
+
+      function emailcheck(ee){
+	if(ee.email.value == ""){
+		alert("이메일이 입력되어있지 않습니다.");
+		ee.email.focus();
+		}
+	   else{ alert("이메일 변경이 완료되었습니다.");
+	        }
+        }
+
+
+    function phonecheck(pp){
+    if(pp.phone.value == ""){
+		alert("전화번호가 입력되어있지 않습니다.");
+		ff.phone.focus();
+		}
+	   else{ alert("전화번호 변경이 완료되었습니다.");
+	        }
+        }
+
+      
+
+
+
+  </script>
+</head>
+<body>
+    <center>
+		<div class="cc">
+			<span class="ss">
+			   <b>개냥이 용품점 애옹쓰~ 신규 오픈기념 카테고리 별로 최대 10% ~ 50% 할인 이벤트 중입니다!!! 이벤트는 8월 31일 까지 진행됩니다! (일부 품목은 할인목록에서 제외 될 수 있으며, 할인 품목 재고 소진시 할인이벤트가 조기 종료될 수 있습니다.) 개냥이용품점 애옹쓰 많이 애용해주세요~</b>
+			</span>  
+		</div>
+	<form name="form">
+        <a href = "second.html"><img src="logo.png" style="width: 200PX;"></a>
+	<table>
+	<caption>회원 정보 관리</caption>
+	 <tr>
+	  <td class="t1">닉네임</td><td><input type="text" name="name" size="8" maxlength="8" autofocus></td>
+	 </tr>
+     <tr>
+        <td class="t1">이메일</td><td><input type="text" name="email" size="25" maxlength="25">
+            <button type="button" onclick="emailcheck(this.form)"id="b1">변경하기</button>
+        </td>
+    </tr>
+    <tr>
+        <td class="t1">전화</td><td><input type="text" name="phone" size="13" maxlength="13">
+            <button type="button" onclick="phonecheck(this.form)"id="b2">변경하기</button>
+        </td>
+    </tr>
+	 <tr>
+	   <td class="t1">성별</td><td><input type="radio" name="sung" value="여자">여성
+	         <input type="radio" name="sung" value="남자">남성
+		          </td>
+	 </tr>
+	 <tr>
+	  <td class="t1">생일</td><td><input type="text" name="birthday" size="10" maxlength="10"></td>
+	  </tr>
+	  <tr>
+	    <td class="t1">알림설정</td><td><input type="checkbox" name="check1" value="SMS">SMS
+	         <input type="checkbox" name="check2" value="이메일">이메일
+			</td>
+	  </tr>
+	</table>
+    <div class="button1">
+        <button type="button" onclick="secession()" id="b3">회원탈퇴</button>
+        <!-- <input type="button" name="button1" value="회원 탈퇴" onclick="secession()"> -->
+        </div>
+    <div class="button2">
+    <input type="button" name="button2" value="회원 정보 수정하기" id = "b4" onclick="correction(this.form)">
+    </div>
+	</form>
+	<footer> 
+		사업자명 : 애용쓰 <br> 판매업 신고 번호 : 제 2023-인천송도-03277<br>주소 : 인천광역시 송도동 글로벌캠퍼스 푸르지오 아파트 111동 805호 <br> 고객지원: 문의 게시판 또는 실시간 채팅 <br> 이용약관 | 개인정보처리방침 | 리셀러 소개 <br> Made by 장재영 김은형 박예은 백종욱
+	</footer>
+</center>
+</body>
+</html>
